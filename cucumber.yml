@@ -1,0 +1,17 @@
+default: --no-source --color --format pretty
+
+#profile que ira executar as (funcionalidades/cenários) de: cadastro, edição e deleção.
+#ao termino irá gerar um relatorio em formato html de toda a execução
+regressao: -t @cadastrar -t @editar -t @deletar -f html -o report_regressao.html
+
+#profile que irá executar as (funcionalidades/cenarios) de: cadastro.
+#ao termino irá gerar um relatorio em formato html de toda a execução
+cadastrar: -t @cadastrar -f html -o report_cadastramento.html
+
+#profile que irá executar as (funcionalidades/cenarios) de: edição.
+#ao termino irá gerar um relatorio em formato html de toda a execução
+editar: -t @editar -f html -o report_edicao.html
+
+#profile que irá executar as (funcionalidades/cenarios) de: deleção.
+#ao termino irá gerar um relatorio em formato html de toda a execução
+deletar:  -t @deletar -f html -o report_delecao.html
